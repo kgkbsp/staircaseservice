@@ -1,26 +1,45 @@
 package uk.co.rkg.staircase;
 
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
+import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+
 public class StairCaseServiceTest {
 
-    @InjectMocks
-    private StairCaseController stairCaseController;
+    private StairCaseService stairCaseService;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    @Before
+    public void setUp() {
+        stairCaseService = new StairCaseService();
+    }
 
     @Test
-    public void testGetProbability_ShouldCallService_AndReturnLProbabilityCount() {
-        //GIVEN
-        final int stairsCount = 3;
+    public void testFibCalculatesCorrectly() {
 
-        final int actualWaysResponse = stairCaseController.countWays(3);
-        assertEquals(2, actualWaysResponse);
+        int stairsCount = 1;
+
+        assertEquals(1, StairCaseService.fib(stairsCount));
     }
+
+//    @Test
+//    public void testFibHandlesStairsCountCorrectly() {
+//
+//        int stairsCount = -12;
+//
+//        //test type
+//        thrown.expect(NameNotFoundException.class);
+//
+//        //test message
+//        thrown.expectMessage(is("Name is empty!"));
+//
+//         StairCaseService.fib(stairsCount);
+//
+//
+//    }
 }

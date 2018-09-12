@@ -1,5 +1,8 @@
 package uk.co.rkg.staircase;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StairCaseService {
 
     // A simple recursive program number
