@@ -26,5 +26,11 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'org.jsondoc', name: 'jsondoc-core', version: '1.2.19'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-context', version: '2.0.1.RELEASE'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile group: 'org.junit', name: 'org.junit', version: '3.8.2.v200706111738'
+	testCompile group: 'com.github.tomakehurst', name: 'wiremock', version: '1.18'
+
 }

@@ -1,6 +1,6 @@
 package uk.co.rkg.staircase;
 
-public class Stairs {
+public class StairCaseService {
 
     // A simple recursive program number
     static int fib(int n) {
@@ -15,11 +15,4 @@ public class Stairs {
     static int countWays(int s) {
         return fib(s + 1);
     }
-
-    /* Driver program to test above function */
-    public static void main (String args[])
-    {
-        System.out.println("Number of ways = "+ countWays(4));
-    }
-
 }
