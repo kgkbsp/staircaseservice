@@ -21,6 +21,6 @@ public class StairCaseControllerTest {
         final int stairsCount = 3;
 
         final int actualWaysResponse = stairCaseController.countWays(3);
-        assertEquals(2, actualWaysResponse);
+        assertEquals(3, actualWaysResponse);
     }
 }

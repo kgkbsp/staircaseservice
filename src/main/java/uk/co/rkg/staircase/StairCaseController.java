@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StairCaseController {
 
-    private static final String template = "Number of ways = , %s!";
-
     private StairCaseService stairCaseService;
 
     @Autowired

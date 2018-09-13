@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class StairCaseIntegrartionTest {
-
+public class StairCaseServiceIntegrartionTest {
+    //TODO - This goes in the env.properties
     private String baseUrl = "http://localhost:8080/staircase/stairs/";
 
     @Test
-    public void testStairCaseServiceIsResponse(){
+    public void testStairCaseServiceIsResponsive(){
         int count = 3;
         given().
                 when().
@@ -19,5 +19,15 @@ public class StairCaseIntegrartionTest {
                 statusCode(200).
                 and().
                 assertThat().body(org.hamcrest.Matchers.equalTo("3"));
+    }
+
+    @Test
+    public void testCORSBySetOrigin(){
+        //TODO
+    }
+
+    @Test
+    public void testJSONDocs(){
+        //TODO
     }
 }

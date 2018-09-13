@@ -20,26 +20,33 @@ public class StairCaseServiceTest {
     }
 
     @Test
-    public void testFibCalculatesCorrectly() {
-
-        int stairsCount = 1;
-
-        assertEquals(1, StairCaseService.fib(stairsCount));
+    public void testCountWaysCalculatesFor0Correctly() {
+        int stairsCount = 0;
+        assertEquals(0, StairCaseService.countWays(stairsCount));
     }
 
-//    @Test
-//    public void testFibHandlesStairsCountCorrectly() {
-//
-//        int stairsCount = -12;
-//
-//        //test type
-//        thrown.expect(NameNotFoundException.class);
-//
-//        //test message
-//        thrown.expectMessage(is("Name is empty!"));
-//
-//         StairCaseService.fib(stairsCount);
-//
-//
-//    }
+    @Test
+    public void testCountWaysCalculatesFor1Correctly() {
+        int stairsCount = 1;
+        assertEquals(1, StairCaseService.countWays(stairsCount));
+    }
+
+    @Test
+    public void testCountWaysCalculatesFor2Correctly() {
+        int stairsCount = 2;
+        assertEquals(2, StairCaseService.countWays(stairsCount));
+    }
+
+    @Test
+    public void testCountWaysCalculatesForGraterThan2Correctly() {
+        int stairsCount = 4;
+        assertEquals(5, StairCaseService.countWays(stairsCount));
+    }
+
+    //TODO - dev to confirm exact error
+    @Test(expected = Exception.class)
+    public void testCountWaysCalculatesForNegativeIntegerCorrectly() {
+        int stairsCount = -6;
+        StairCaseService.countWays(stairsCount);
+    }
 }
