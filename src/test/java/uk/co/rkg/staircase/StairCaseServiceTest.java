@@ -4,15 +4,15 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.assertEquals;
 
 
 public class StairCaseServiceTest {
 
-    private StairCaseService stairCaseService;
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+    private StairCaseService stairCaseService;
 
     @Before
     public void setUp() {
@@ -43,9 +43,8 @@ public class StairCaseServiceTest {
         assertEquals(5, StairCaseService.countWays(stairsCount));
     }
 
-    @Test(expected= NullPointerException.class)
-    public void testCountWaysCalculatesForNullCorrectly() throws Exception
-    {
+    @Test(expected = NullPointerException.class)
+    public void testCountWaysCalculatesForNullCorrectly() throws Exception {
         assertEquals(5, StairCaseService.countWays(Integer.getInteger("")));
     }
 
