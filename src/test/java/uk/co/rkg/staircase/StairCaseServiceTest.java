@@ -43,6 +43,12 @@ public class StairCaseServiceTest {
         assertEquals(5, StairCaseService.countWays(stairsCount));
     }
 
+    @Test(expected= NullPointerException.class)
+    public void testCountWaysCalculatesForNullCorrectly() throws Exception
+    {
+        assertEquals(5, StairCaseService.countWays(Integer.getInteger("")));
+    }
+
     //TODO - dev to confirm exact error
     @Test(expected = Exception.class)
     public void testCountWaysCalculatesForNegativeIntegerCorrectly() {
